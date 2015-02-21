@@ -11,4 +11,7 @@
 
 @interface EventView : UIView
 
+@property (nonatomic) int stageNum;
+
+
 @end

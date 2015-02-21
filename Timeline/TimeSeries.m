@@ -24,17 +24,18 @@
         endDate = [endDate laterDate:tempDict[@"end"]];
     }
     
-    NSMutableDictionary *eventDict = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *tmpEventDict = [[NSMutableDictionary alloc] init];
     for (NSDictionary *tmpDict in eventArray) {
         NSTimeInterval secondsBetween = [tmpDict[@"start"] timeIntervalSinceDate:startDate];
         NSInteger seconds = (NSInteger) secondsBetween;
-        [eventDict setObject:tmpDict forKey: [NSNumber numberWithLong:seconds]];
+        NSString *secStr = [NSString stringWithFormat:@"%ld",seconds];
+        [tmpEventDict setObject:tmpDict forKey: secStr];
     }
     
-    self.eventDict = eventDict;
+    self.eventDict = tmpEventDict; //eventDict;
     
-    NSLog(@"%@", [eventDict objectForKey:@1001]);
-    NSLog(@"%@", [self.eventDict objectForKey:@1001]);
+//    NSLog(@"%@", [eventDict objectForKey:@1001]);
+//    NSLog(@"%@", [self.eventDict objectForKey:@1001]);
     return self;
 }
 
