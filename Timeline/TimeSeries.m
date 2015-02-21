@@ -12,38 +12,33 @@
 
 - (id) initWithEvents:(NSArray*)eventArray {
     
-    NSDictionary *dict1 = @{@"artist": @"The Colorist", @"start": [[NSDate alloc] initWithTimeIntervalSince1970:123456789], @"end": [[NSDate alloc] initWithTimeIntervalSince1970:223456789]};
-    NSArray *test = @[dict1]; //replace all eventArray with test
+    //NSDictionary *dict1 = @{@"artist": @"The Colorist", @"start": [[NSDate alloc] initWithTimeIntervalSince1970:1424568778], @"end": [[NSDate alloc] initWithTimeIntervalSince1970:1424569778]};
+    //NSDictionary *dict2 = @{@"artist": @"The Colorist 2", @"start": [[NSDate alloc] initWithTimeIntervalSince1970:1424569779], @"end": [[NSDate alloc] initWithTimeIntervalSince1970:1424570878]};
+    //NSArray *test = @[dict1, dict2]; //replace all eventArray with test
     
-    NSDate * startDate = [[NSDate alloc] initWithTimeIntervalSince1970:INTMAX_MAX];
+    NSDate * startDate = [[NSDate alloc] initWithTimeIntervalSince1970:1524567778];
     NSDate * endDate = [[NSDate alloc] initWithTimeIntervalSince1970:0];
     
-    for (int i = 0; i < eventArray.count; i++) {
-        if (eventArray[i][@"start"] < startDate) {
-            startDate = test[i][@"start"];
-        }
-        if (eventArray[i][@"end"] > endDate) {
-            endDate = test[i][@"end"];
-        }
+    for (NSDictionary *tempDict in eventArray) {
+        startDate = [startDate earlierDate:tempDict[@"start"]];
+        endDate = [endDate laterDate:tempDict[@"end"]];
     }
     
-    NSTimeInterval distanceBetween = [startDate timeIntervalSinceDate:endDate];
-    NSInteger minutesBetween = distanceBetween / 60;
+    NSTimeInterval secondsBetween = [endDate timeIntervalSinceDate:startDate];
     
-    NSMutableArray * events = [[NSMutableArray alloc] initWithCapacity:minutesBetween]; //Each index value represents a minute
+    NSMutableArray * events = [[NSMutableArray alloc] initWithCapacity:secondsBetween]; //Each index value represents a minute
     
-    for (int i = 0; i < events.count; i++) {
-        if (test[i][@"start"]/60  == i) {
-            events[i] = test[i];
-        }
-        else {
-            events[i] = nil;
-        }
+    for (int j = 0; j < secondsBetween; j++) {
+        events[j] = @{};
+    }
+    
+    
+    for (NSDictionary *tmpDict in eventArray) {
+        NSTimeInterval secondsBetween = [tmpDict[@"start"] timeIntervalSinceDate:startDate];
+        events[(NSInteger) secondsBetween] = tmpDict[@"start"];
     }
     
     return self;
 }
 
 @end
-
-

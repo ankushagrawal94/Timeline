@@ -24,6 +24,8 @@
 		ACDAAD801A98B2C000DA06B6 /* red-o.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ACDAAD791A98B2C000DA06B6 /* red-o.jpg */; };
 		ACDAAD831A98B34D00DA06B6 /* EventView.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDAAD821A98B34D00DA06B6 /* EventView.m */; };
 		ACDAAD881A98D86F00DA06B6 /* TimeSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDAAD871A98D86F00DA06B6 /* TimeSeries.m */; };
+		ACDAAD8B1A9905FA00DA06B6 /* VTimeline.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDAAD8A1A9905FA00DA06B6 /* VTimeline.m */; };
+		ACDAAD8E1A990C2900DA06B6 /* ButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDAAD8D1A990C2900DA06B6 /* ButtonView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,10 @@
 		ACDAAD821A98B34D00DA06B6 /* EventView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventView.m; path = Artwork/EventView.m; sourceTree = "<group>"; };
 		ACDAAD861A98D86F00DA06B6 /* TimeSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeSeries.h; sourceTree = "<group>"; };
 		ACDAAD871A98D86F00DA06B6 /* TimeSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeSeries.m; sourceTree = "<group>"; };
+		ACDAAD891A9905F400DA06B6 /* VTimeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTimeline.h; sourceTree = "<group>"; };
+		ACDAAD8A1A9905FA00DA06B6 /* VTimeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTimeline.m; sourceTree = "<group>"; };
+		ACDAAD8C1A990C2900DA06B6 /* ButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonView.h; sourceTree = "<group>"; };
+		ACDAAD8D1A990C2900DA06B6 /* ButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,10 +116,14 @@
 				ACDAAD701A98B19B00DA06B6 /* TimelineViewController.m */,
 				ACDAAD811A98B34D00DA06B6 /* EventView.h */,
 				ACDAAD821A98B34D00DA06B6 /* EventView.m */,
+				ACDAAD891A9905F400DA06B6 /* VTimeline.h */,
+				ACDAAD8A1A9905FA00DA06B6 /* VTimeline.m */,
 				ACDAAD861A98D86F00DA06B6 /* TimeSeries.h */,
 				ACDAAD871A98D86F00DA06B6 /* TimeSeries.m */,
 				ACDAAD501A98B15900DA06B6 /* ViewController.h */,
 				ACDAAD511A98B15900DA06B6 /* ViewController.m */,
+				ACDAAD8C1A990C2900DA06B6 /* ButtonView.h */,
+				ACDAAD8D1A990C2900DA06B6 /* ButtonView.m */,
 				ACDAAD531A98B15900DA06B6 /* Main.storyboard */,
 				ACDAAD561A98B15900DA06B6 /* Images.xcassets */,
 				ACDAAD581A98B15900DA06B6 /* LaunchScreen.xib */,
@@ -270,11 +280,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACDAAD8B1A9905FA00DA06B6 /* VTimeline.m in Sources */,
 				ACDAAD521A98B15900DA06B6 /* ViewController.m in Sources */,
 				ACDAAD881A98D86F00DA06B6 /* TimeSeries.m in Sources */,
 				ACDAAD831A98B34D00DA06B6 /* EventView.m in Sources */,
 				ACDAAD711A98B19B00DA06B6 /* TimelineViewController.m in Sources */,
 				ACDAAD4F1A98B15900DA06B6 /* AppDelegate.m in Sources */,
+				ACDAAD8E1A990C2900DA06B6 /* ButtonView.m in Sources */,
 				ACDAAD4C1A98B15900DA06B6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

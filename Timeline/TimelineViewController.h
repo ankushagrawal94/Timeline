@@ -7,6 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "TimeSeries.h"
+#import "EventView.h"
+#import "ButtonView.h"
 
 @interface TimelineViewController : ViewController
 
