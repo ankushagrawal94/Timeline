@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TimelineViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

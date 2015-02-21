@@ -14,6 +14,16 @@
 		ACDAAD571A98B15900DA06B6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACDAAD561A98B15900DA06B6 /* Images.xcassets */; };
 		ACDAAD5A1A98B15900DA06B6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACDAAD581A98B15900DA06B6 /* LaunchScreen.xib */; };
 		ACDAAD661A98B15900DA06B6 /* TimelineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDAAD651A98B15900DA06B6 /* TimelineTests.m */; };
+		ACDAAD711A98B19B00DA06B6 /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDAAD701A98B19B00DA06B6 /* TimelineViewController.m */; };
+		ACDAAD7A1A98B2C000DA06B6 /* all-o.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ACDAAD731A98B2C000DA06B6 /* all-o.jpg */; };
+		ACDAAD7B1A98B2C000DA06B6 /* blue-o.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ACDAAD741A98B2C000DA06B6 /* blue-o.jpg */; };
+		ACDAAD7C1A98B2C000DA06B6 /* blueish-o.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ACDAAD751A98B2C000DA06B6 /* blueish-o.jpg */; };
+		ACDAAD7D1A98B2C000DA06B6 /* blueish.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ACDAAD761A98B2C000DA06B6 /* blueish.jpg */; };
+		ACDAAD7E1A98B2C000DA06B6 /* heartbeat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ACDAAD771A98B2C000DA06B6 /* heartbeat.jpg */; };
+		ACDAAD7F1A98B2C000DA06B6 /* hexagon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ACDAAD781A98B2C000DA06B6 /* hexagon.jpg */; };
+		ACDAAD801A98B2C000DA06B6 /* red-o.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ACDAAD791A98B2C000DA06B6 /* red-o.jpg */; };
+		ACDAAD831A98B34D00DA06B6 /* EventView.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDAAD821A98B34D00DA06B6 /* EventView.m */; };
+		ACDAAD881A98D86F00DA06B6 /* TimeSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDAAD871A98D86F00DA06B6 /* TimeSeries.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +50,19 @@
 		ACDAAD5F1A98B15900DA06B6 /* TimelineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimelineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACDAAD641A98B15900DA06B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACDAAD651A98B15900DA06B6 /* TimelineTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimelineTests.m; sourceTree = "<group>"; };
+		ACDAAD6F1A98B19B00DA06B6 /* TimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineViewController.h; sourceTree = "<group>"; };
+		ACDAAD701A98B19B00DA06B6 /* TimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineViewController.m; sourceTree = "<group>"; };
+		ACDAAD731A98B2C000DA06B6 /* all-o.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "all-o.jpg"; sourceTree = "<group>"; };
+		ACDAAD741A98B2C000DA06B6 /* blue-o.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "blue-o.jpg"; sourceTree = "<group>"; };
+		ACDAAD751A98B2C000DA06B6 /* blueish-o.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "blueish-o.jpg"; sourceTree = "<group>"; };
+		ACDAAD761A98B2C000DA06B6 /* blueish.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blueish.jpg; sourceTree = "<group>"; };
+		ACDAAD771A98B2C000DA06B6 /* heartbeat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = heartbeat.jpg; sourceTree = "<group>"; };
+		ACDAAD781A98B2C000DA06B6 /* hexagon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hexagon.jpg; sourceTree = "<group>"; };
+		ACDAAD791A98B2C000DA06B6 /* red-o.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "red-o.jpg"; sourceTree = "<group>"; };
+		ACDAAD811A98B34D00DA06B6 /* EventView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventView.h; path = Artwork/EventView.h; sourceTree = "<group>"; };
+		ACDAAD821A98B34D00DA06B6 /* EventView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventView.m; path = Artwork/EventView.m; sourceTree = "<group>"; };
+		ACDAAD861A98D86F00DA06B6 /* TimeSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeSeries.h; sourceTree = "<group>"; };
+		ACDAAD871A98D86F00DA06B6 /* TimeSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeSeries.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,11 +106,18 @@
 			children = (
 				ACDAAD4D1A98B15900DA06B6 /* AppDelegate.h */,
 				ACDAAD4E1A98B15900DA06B6 /* AppDelegate.m */,
+				ACDAAD6F1A98B19B00DA06B6 /* TimelineViewController.h */,
+				ACDAAD701A98B19B00DA06B6 /* TimelineViewController.m */,
+				ACDAAD811A98B34D00DA06B6 /* EventView.h */,
+				ACDAAD821A98B34D00DA06B6 /* EventView.m */,
+				ACDAAD861A98D86F00DA06B6 /* TimeSeries.h */,
+				ACDAAD871A98D86F00DA06B6 /* TimeSeries.m */,
 				ACDAAD501A98B15900DA06B6 /* ViewController.h */,
 				ACDAAD511A98B15900DA06B6 /* ViewController.m */,
 				ACDAAD531A98B15900DA06B6 /* Main.storyboard */,
 				ACDAAD561A98B15900DA06B6 /* Images.xcassets */,
 				ACDAAD581A98B15900DA06B6 /* LaunchScreen.xib */,
+				ACDAAD721A98B2C000DA06B6 /* Artwork */,
 				ACDAAD491A98B15900DA06B6 /* Supporting Files */,
 			);
 			path = Timeline;
@@ -117,6 +147,20 @@
 				ACDAAD641A98B15900DA06B6 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ACDAAD721A98B2C000DA06B6 /* Artwork */ = {
+			isa = PBXGroup;
+			children = (
+				ACDAAD731A98B2C000DA06B6 /* all-o.jpg */,
+				ACDAAD741A98B2C000DA06B6 /* blue-o.jpg */,
+				ACDAAD751A98B2C000DA06B6 /* blueish-o.jpg */,
+				ACDAAD761A98B2C000DA06B6 /* blueish.jpg */,
+				ACDAAD771A98B2C000DA06B6 /* heartbeat.jpg */,
+				ACDAAD781A98B2C000DA06B6 /* hexagon.jpg */,
+				ACDAAD791A98B2C000DA06B6 /* red-o.jpg */,
+			);
+			path = Artwork;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,8 +243,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACDAAD7C1A98B2C000DA06B6 /* blueish-o.jpg in Resources */,
+				ACDAAD801A98B2C000DA06B6 /* red-o.jpg in Resources */,
 				ACDAAD551A98B15900DA06B6 /* Main.storyboard in Resources */,
+				ACDAAD7A1A98B2C000DA06B6 /* all-o.jpg in Resources */,
+				ACDAAD7F1A98B2C000DA06B6 /* hexagon.jpg in Resources */,
+				ACDAAD7D1A98B2C000DA06B6 /* blueish.jpg in Resources */,
+				ACDAAD7E1A98B2C000DA06B6 /* heartbeat.jpg in Resources */,
 				ACDAAD5A1A98B15900DA06B6 /* LaunchScreen.xib in Resources */,
+				ACDAAD7B1A98B2C000DA06B6 /* blue-o.jpg in Resources */,
 				ACDAAD571A98B15900DA06B6 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,6 +271,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACDAAD521A98B15900DA06B6 /* ViewController.m in Sources */,
+				ACDAAD881A98D86F00DA06B6 /* TimeSeries.m in Sources */,
+				ACDAAD831A98B34D00DA06B6 /* EventView.m in Sources */,
+				ACDAAD711A98B19B00DA06B6 /* TimelineViewController.m in Sources */,
 				ACDAAD4F1A98B15900DA06B6 /* AppDelegate.m in Sources */,
 				ACDAAD4C1A98B15900DA06B6 /* main.m in Sources */,
 			);
