@@ -15,7 +15,14 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
     // Drawing code
-    [VTimeline drawRightItemWithArtistImage:[UIImage imageNamed:@"blueish-o.jpg"] imageY:60 imageSize:116 timeText:@"7:30" artistName:@"The Colorist"];
+    
+    if ([self.stageNum isEqualToNumber:@1]){
+        [VTimeline drawLeft_10WithArtistImage:[UIImage imageNamed:@"blueish-o.jpg"] imageY:60 imageSize:116 timeText:@"7:30" artistName:@"Dada Life"];
+    }
+    else {
+        [VTimeline drawRight_10WithArtistImage:[UIImage imageNamed:@"blueish-o.jpg"] imageY:60 imageSize:116 timeText:@"7:30" artistName:@"Dada Life 2"];
+
+    }
 }
 
 @end
