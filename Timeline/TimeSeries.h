@@ -12,7 +12,7 @@
     
 }
 
-@property (nonatomic, assign) NSMutableArray* events;
+@property (nonatomic, assign) NSDictionary* eventDict;
 
 
 - (id) initWithEvents:(NSArray*)eventArray;

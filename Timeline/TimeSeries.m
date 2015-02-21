@@ -24,20 +24,17 @@
         endDate = [endDate laterDate:tempDict[@"end"]];
     }
     
-    NSTimeInterval secondsBetween = [endDate timeIntervalSinceDate:startDate];
-    
-    NSMutableArray * events = [[NSMutableArray alloc] initWithCapacity:secondsBetween]; //Each index value represents a minute
-    
-    for (int j = 0; j < secondsBetween; j++) {
-        events[j] = @{};
-    }
-    
-    
+    NSMutableDictionary *eventDict = [[NSMutableDictionary alloc] init];
     for (NSDictionary *tmpDict in eventArray) {
         NSTimeInterval secondsBetween = [tmpDict[@"start"] timeIntervalSinceDate:startDate];
-        events[(NSInteger) secondsBetween] = tmpDict[@"start"];
+        NSInteger seconds = (NSInteger) secondsBetween;
+        [eventDict setObject:tmpDict forKey: [NSNumber numberWithLong:seconds]];
     }
     
+    self.eventDict = eventDict;
+    
+    NSLog(@"%@", [eventDict objectForKey:@1001]);
+    NSLog(@"%@", [self.eventDict objectForKey:@1001]);
     return self;
 }
 
