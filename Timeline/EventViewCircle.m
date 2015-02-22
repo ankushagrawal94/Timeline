@@ -10,6 +10,24 @@
 
 @implementation EventViewCircle
 
+- (id)init {
+    if ((self = [super init])) {
+        //    [self commonInit];
+    }
+    self.circleCenter = CGPointZero;
+    self.circleRadius = 25;
+    return self;
+}
+
+- (id)initWithFrame:(CGRect)frame {
+    if ((self = [super initWithFrame:frame])) {
+        //    [self commonInit];
+    }
+    self.circleRadius = 25;
+    self.circleCenter = CGPointZero;
+    return self;
+}
+
 - (void)drawRect:(CGRect)rect {
     // Drawing code
     
@@ -22,10 +40,10 @@
     if ([self.durationNum isEqualToValue:@10]){
         if ([self.stageNum isEqualToNumber:@1]){
             [VTimelineCircle drawLeft_10WithArtistImage:[UIImage imageNamed:@"blueish-o.jpg"] imageY:60 imageSize:116 timeText:@"7:30" artistName:@"Dada Life"];
+            self.circleCenter = CGPointMake(107, 95);
         }
         else{
             [VTimelineCircle drawRight_10WithArtistImage:[UIImage imageNamed:@"blueish-o.jpg"] imageY:60 imageSize:116 timeText:@"7:30" artistName:@"Dada Life"];
-            
         }
     }
     

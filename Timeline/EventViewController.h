@@ -1,5 +1,5 @@
 //
-//  EventView.h
+//  EventViewController.h
 //  Timeline
 //
 //  Created by Ankush Agrawal on 2/21/15.
@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "VTimeline.h"
-#import "EventViewBase.h"
 
-@interface EventView : EventViewBase
+@interface EventViewController : UIViewController
+
 @end

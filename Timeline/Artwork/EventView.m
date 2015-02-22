@@ -9,7 +9,19 @@
 #import "EventView.h"
 
 @implementation EventView
+- (id)init {
+    if ((self = [super init])) {
+    //    [self commonInit];
+    }
+    return self;
+}
 
+- (id)initWithFrame:(CGRect)frame {
+    if ((self = [super initWithFrame:frame])) {
+    //    [self commonInit];
+    }
+    return self;
+}
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

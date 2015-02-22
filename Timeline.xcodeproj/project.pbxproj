@@ -30,6 +30,8 @@
 		ACDAAD8E1A990C2900DA06B6 /* ButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDAAD8D1A990C2900DA06B6 /* ButtonView.m */; };
 		ACDAAD911A998EFD00DA06B6 /* EventViewCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDAAD901A998EFD00DA06B6 /* EventViewCircle.m */; };
 		ACDAAD941A998FF800DA06B6 /* VTimelineCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDAAD931A998FF800DA06B6 /* VTimelineCircle.m */; };
+		ACDAAD9A1A99A24E00DA06B6 /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDAAD991A99A24E00DA06B6 /* EventViewController.m */; };
+		ACDAADA01A99C4D100DA06B6 /* EventViewBase.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDAAD9F1A99C4D100DA06B6 /* EventViewBase.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,10 @@
 		ACDAAD901A998EFD00DA06B6 /* EventViewCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewCircle.m; sourceTree = "<group>"; };
 		ACDAAD921A998FF800DA06B6 /* VTimelineCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTimelineCircle.h; sourceTree = "<group>"; };
 		ACDAAD931A998FF800DA06B6 /* VTimelineCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTimelineCircle.m; sourceTree = "<group>"; };
+		ACDAAD981A99A24E00DA06B6 /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
+		ACDAAD991A99A24E00DA06B6 /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
+		ACDAAD9E1A99C4D100DA06B6 /* EventViewBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewBase.h; sourceTree = "<group>"; };
+		ACDAAD9F1A99C4D100DA06B6 /* EventViewBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewBase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,18 +128,13 @@
 			children = (
 				ACDAAD4D1A98B15900DA06B6 /* AppDelegate.h */,
 				ACDAAD4E1A98B15900DA06B6 /* AppDelegate.m */,
-				ACDAAD6F1A98B19B00DA06B6 /* TimelineViewController.h */,
-				ACDAAD701A98B19B00DA06B6 /* TimelineViewController.m */,
-				ACDAAD811A98B34D00DA06B6 /* EventView.h */,
-				ACDAAD821A98B34D00DA06B6 /* EventView.m */,
-				ACDAAD8F1A998EFD00DA06B6 /* EventViewCircle.h */,
-				ACDAAD901A998EFD00DA06B6 /* EventViewCircle.m */,
-				ACDAAD921A998FF800DA06B6 /* VTimelineCircle.h */,
-				ACDAAD931A998FF800DA06B6 /* VTimelineCircle.m */,
-				ACDAAD891A9905F400DA06B6 /* VTimeline.h */,
-				ACDAAD8A1A9905FA00DA06B6 /* VTimeline.m */,
+				ACDAAD951A99980600DA06B6 /* TimelineVC */,
+				ACDAAD961A99983500DA06B6 /* SquareEventView */,
+				ACDAAD971A99984E00DA06B6 /* CircleEventView */,
 				ACDAAD861A98D86F00DA06B6 /* TimeSeries.h */,
 				ACDAAD871A98D86F00DA06B6 /* TimeSeries.m */,
+				ACDAAD9E1A99C4D100DA06B6 /* EventViewBase.h */,
+				ACDAAD9F1A99C4D100DA06B6 /* EventViewBase.m */,
 				ACDAAD501A98B15900DA06B6 /* ViewController.h */,
 				ACDAAD511A98B15900DA06B6 /* ViewController.m */,
 				ACDAAD8C1A990C2900DA06B6 /* ButtonView.h */,
@@ -187,6 +188,39 @@
 				ACDAAD791A98B2C000DA06B6 /* red-o.jpg */,
 			);
 			path = Artwork;
+			sourceTree = "<group>";
+		};
+		ACDAAD951A99980600DA06B6 /* TimelineVC */ = {
+			isa = PBXGroup;
+			children = (
+				ACDAAD6F1A98B19B00DA06B6 /* TimelineViewController.h */,
+				ACDAAD701A98B19B00DA06B6 /* TimelineViewController.m */,
+			);
+			name = TimelineVC;
+			sourceTree = "<group>";
+		};
+		ACDAAD961A99983500DA06B6 /* SquareEventView */ = {
+			isa = PBXGroup;
+			children = (
+				ACDAAD811A98B34D00DA06B6 /* EventView.h */,
+				ACDAAD821A98B34D00DA06B6 /* EventView.m */,
+				ACDAAD891A9905F400DA06B6 /* VTimeline.h */,
+				ACDAAD8A1A9905FA00DA06B6 /* VTimeline.m */,
+				ACDAAD981A99A24E00DA06B6 /* EventViewController.h */,
+				ACDAAD991A99A24E00DA06B6 /* EventViewController.m */,
+			);
+			name = SquareEventView;
+			sourceTree = "<group>";
+		};
+		ACDAAD971A99984E00DA06B6 /* CircleEventView */ = {
+			isa = PBXGroup;
+			children = (
+				ACDAAD8F1A998EFD00DA06B6 /* EventViewCircle.h */,
+				ACDAAD901A998EFD00DA06B6 /* EventViewCircle.m */,
+				ACDAAD921A998FF800DA06B6 /* VTimelineCircle.h */,
+				ACDAAD931A998FF800DA06B6 /* VTimelineCircle.m */,
+			);
+			name = CircleEventView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,10 +338,12 @@
 				ACDAAD831A98B34D00DA06B6 /* EventView.m in Sources */,
 				ACDAAD711A98B19B00DA06B6 /* TimelineViewController.m in Sources */,
 				ACDAAD4F1A98B15900DA06B6 /* AppDelegate.m in Sources */,
+				ACDAADA01A99C4D100DA06B6 /* EventViewBase.m in Sources */,
 				ACDAAD8E1A990C2900DA06B6 /* ButtonView.m in Sources */,
 				ACDAAD941A998FF800DA06B6 /* VTimelineCircle.m in Sources */,
 				ACDAAD4C1A98B15900DA06B6 /* main.m in Sources */,
 				ACDAAD911A998EFD00DA06B6 /* EventViewCircle.m in Sources */,
+				ACDAAD9A1A99A24E00DA06B6 /* EventViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

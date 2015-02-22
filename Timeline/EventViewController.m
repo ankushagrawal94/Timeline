@@ -1,14 +1,13 @@
 //
-//  EventView.h
+//  EventViewController.m
 //  Timeline
 //
 //  Created by Ankush Agrawal on 2/21/15.
 //  Copyright (c) 2015 Ankush Agrawal. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "VTimeline.h"
-#import "EventViewBase.h"
+#import "EventViewController.h"
 
-@interface EventView : EventViewBase
+@implementation EventViewController
+
 @end

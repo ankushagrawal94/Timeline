@@ -9,12 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "VTimeline.h"
 #import "VTimelineCircle.h"
+#import "EventViewBase.h"
 
-@interface EventViewCircle : UIView
-
-@property (nonatomic, strong) NSNumber *stageNum;
-
-//@property (nonatomic, strong) NSNumber *startTime;
-@property (nonatomic, strong) NSNumber *durationNum;
-
+@interface EventViewCircle : EventViewBase
+@property (nonatomic, assign) CGPoint circleCenter;
+@property (nonatomic, assign) CGFloat circleRadius;
 @end
