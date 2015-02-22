@@ -28,6 +28,8 @@
 		ACDAAD881A98D86F00DA06B6 /* TimeSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDAAD871A98D86F00DA06B6 /* TimeSeries.m */; };
 		ACDAAD8B1A9905FA00DA06B6 /* VTimeline.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDAAD8A1A9905FA00DA06B6 /* VTimeline.m */; };
 		ACDAAD8E1A990C2900DA06B6 /* ButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDAAD8D1A990C2900DA06B6 /* ButtonView.m */; };
+		ACDAAD911A998EFD00DA06B6 /* EventViewCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDAAD901A998EFD00DA06B6 /* EventViewCircle.m */; };
+		ACDAAD941A998FF800DA06B6 /* VTimelineCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDAAD931A998FF800DA06B6 /* VTimelineCircle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,10 @@
 		ACDAAD8A1A9905FA00DA06B6 /* VTimeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTimeline.m; sourceTree = "<group>"; };
 		ACDAAD8C1A990C2900DA06B6 /* ButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonView.h; sourceTree = "<group>"; };
 		ACDAAD8D1A990C2900DA06B6 /* ButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonView.m; sourceTree = "<group>"; };
+		ACDAAD8F1A998EFD00DA06B6 /* EventViewCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewCircle.h; sourceTree = "<group>"; };
+		ACDAAD901A998EFD00DA06B6 /* EventViewCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewCircle.m; sourceTree = "<group>"; };
+		ACDAAD921A998FF800DA06B6 /* VTimelineCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTimelineCircle.h; sourceTree = "<group>"; };
+		ACDAAD931A998FF800DA06B6 /* VTimelineCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTimelineCircle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +126,10 @@
 				ACDAAD701A98B19B00DA06B6 /* TimelineViewController.m */,
 				ACDAAD811A98B34D00DA06B6 /* EventView.h */,
 				ACDAAD821A98B34D00DA06B6 /* EventView.m */,
+				ACDAAD8F1A998EFD00DA06B6 /* EventViewCircle.h */,
+				ACDAAD901A998EFD00DA06B6 /* EventViewCircle.m */,
+				ACDAAD921A998FF800DA06B6 /* VTimelineCircle.h */,
+				ACDAAD931A998FF800DA06B6 /* VTimelineCircle.m */,
 				ACDAAD891A9905F400DA06B6 /* VTimeline.h */,
 				ACDAAD8A1A9905FA00DA06B6 /* VTimeline.m */,
 				ACDAAD861A98D86F00DA06B6 /* TimeSeries.h */,
@@ -295,7 +305,9 @@
 				ACDAAD711A98B19B00DA06B6 /* TimelineViewController.m in Sources */,
 				ACDAAD4F1A98B15900DA06B6 /* AppDelegate.m in Sources */,
 				ACDAAD8E1A990C2900DA06B6 /* ButtonView.m in Sources */,
+				ACDAAD941A998FF800DA06B6 /* VTimelineCircle.m in Sources */,
 				ACDAAD4C1A98B15900DA06B6 /* main.m in Sources */,
+				ACDAAD911A998EFD00DA06B6 /* EventViewCircle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

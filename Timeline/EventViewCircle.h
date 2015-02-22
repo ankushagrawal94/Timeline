@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "VTimeline.h"
+#import "VTimelineCircle.h"
 
-@interface EventView : UIView
+@interface EventViewCircle : UIView
 
 @property (nonatomic, strong) NSNumber *stageNum;
 

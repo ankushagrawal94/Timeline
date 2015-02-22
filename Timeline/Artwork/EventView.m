@@ -14,13 +14,6 @@
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
-    // Drawing code
-    
-    
-    //NSInteger tmp = [self.endTime doubleValue] - [self.startTime doubleValue];
-    //NSNumber * tmp2 = [NSNumber numberWithInteger: tmp];
-    //NSLog(tmp2);
-    
     
     if ([self.durationNum isEqualToValue:@10]){
         if ([self.stageNum isEqualToNumber:@1]){
@@ -34,10 +27,10 @@
     
     if ([self.durationNum isEqualToValue:@30]){
         if ([self.stageNum isEqualToNumber:@1]){
-            [VTimeline drawRight_30WithArtistImage:[UIImage imageNamed:@"red-o.jpg"] imageY:70 imageSize:116 timeText:@"7:45" artistName:@"Kanye West"];
+            [VTimeline drawLeft_30WithArtistImage:[UIImage imageNamed:@"blueish-o.jpg"] imageY:60 imageSize:116 timeText:@"7:45" artistName:@"Kanye West"];
         }
         else{
-            [VTimeline drawRight_30WithArtistImage:[UIImage imageNamed:@"red-o.jpg"] imageY:60 imageSize:116 timeText:@"7:30" artistName:@"Kanye West"];
+            [VTimeline drawRight_30WithArtistImage:[UIImage imageNamed:@"blueish-o.jpg"] imageY:60 imageSize:116 timeText:@"7:30" artistName:@"Kanye West"];
             
         }
     }

@@ -19,7 +19,18 @@
     // Override point for customization after application launch.
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[TimelineViewController alloc] init]];
+    UITabBarController *tabBarVC = [[UITabBarController alloc] init];
+    
+    TimelineViewController *circleVC = [[TimelineViewController alloc] init];
+    circleVC.type = @"circle";
+    circleVC.spacing = (1.0/4.5);
+    
+    TimelineViewController *squareVC = [[TimelineViewController alloc] init];
+    squareVC.spacing = (1.0/18.0);
+    squareVC.type = @"square";
+    tabBarVC.viewControllers = @[circleVC, squareVC];
+
+    self.window.rootViewController = tabBarVC;
     [self.window makeKeyAndVisible];
     return YES;
 }
