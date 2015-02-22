@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		884527101A997B2000188550 /* background@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8845270F1A997B2000188550 /* background@3x.png */; };
+		884527131A997BD700188550 /* background-large.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 884527111A997BD700188550 /* background-large.jpg */; };
+		884527141A997BD700188550 /* background-small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 884527121A997BD700188550 /* background-small.jpg */; };
 		ACDAAD4C1A98B15900DA06B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDAAD4B1A98B15900DA06B6 /* main.m */; };
 		ACDAAD4F1A98B15900DA06B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDAAD4E1A98B15900DA06B6 /* AppDelegate.m */; };
 		ACDAAD521A98B15900DA06B6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDAAD511A98B15900DA06B6 /* ViewController.m */; };
 		ACDAAD551A98B15900DA06B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACDAAD531A98B15900DA06B6 /* Main.storyboard */; };
-		ACDAAD571A98B15900DA06B6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACDAAD561A98B15900DA06B6 /* Images.xcassets */; };
 		ACDAAD5A1A98B15900DA06B6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACDAAD581A98B15900DA06B6 /* LaunchScreen.xib */; };
 		ACDAAD661A98B15900DA06B6 /* TimelineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDAAD651A98B15900DA06B6 /* TimelineTests.m */; };
 		ACDAAD711A98B19B00DA06B6 /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDAAD701A98B19B00DA06B6 /* TimelineViewController.m */; };
@@ -39,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8845270F1A997B2000188550 /* background@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@3x.png"; sourceTree = "<group>"; };
+		884527111A997BD700188550 /* background-large.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background-large.jpg"; sourceTree = SOURCE_ROOT; };
+		884527121A997BD700188550 /* background-small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background-small.jpg"; sourceTree = SOURCE_ROOT; };
 		ACDAAD461A98B15900DA06B6 /* Timeline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timeline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACDAAD4A1A98B15900DA06B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACDAAD4B1A98B15900DA06B6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -47,7 +52,6 @@
 		ACDAAD501A98B15900DA06B6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		ACDAAD511A98B15900DA06B6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		ACDAAD541A98B15900DA06B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		ACDAAD561A98B15900DA06B6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		ACDAAD591A98B15900DA06B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		ACDAAD5F1A98B15900DA06B6 /* TimelineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimelineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACDAAD641A98B15900DA06B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -125,7 +129,6 @@
 				ACDAAD8C1A990C2900DA06B6 /* ButtonView.h */,
 				ACDAAD8D1A990C2900DA06B6 /* ButtonView.m */,
 				ACDAAD531A98B15900DA06B6 /* Main.storyboard */,
-				ACDAAD561A98B15900DA06B6 /* Images.xcassets */,
 				ACDAAD581A98B15900DA06B6 /* LaunchScreen.xib */,
 				ACDAAD721A98B2C000DA06B6 /* Artwork */,
 				ACDAAD491A98B15900DA06B6 /* Supporting Files */,
@@ -162,6 +165,9 @@
 		ACDAAD721A98B2C000DA06B6 /* Artwork */ = {
 			isa = PBXGroup;
 			children = (
+				884527111A997BD700188550 /* background-large.jpg */,
+				884527121A997BD700188550 /* background-small.jpg */,
+				8845270F1A997B2000188550 /* background@3x.png */,
 				ACDAAD731A98B2C000DA06B6 /* all-o.jpg */,
 				ACDAAD741A98B2C000DA06B6 /* blue-o.jpg */,
 				ACDAAD751A98B2C000DA06B6 /* blueish-o.jpg */,
@@ -254,15 +260,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACDAAD7C1A98B2C000DA06B6 /* blueish-o.jpg in Resources */,
+				884527141A997BD700188550 /* background-small.jpg in Resources */,
 				ACDAAD801A98B2C000DA06B6 /* red-o.jpg in Resources */,
 				ACDAAD551A98B15900DA06B6 /* Main.storyboard in Resources */,
+				884527101A997B2000188550 /* background@3x.png in Resources */,
 				ACDAAD7A1A98B2C000DA06B6 /* all-o.jpg in Resources */,
 				ACDAAD7F1A98B2C000DA06B6 /* hexagon.jpg in Resources */,
+				884527131A997BD700188550 /* background-large.jpg in Resources */,
 				ACDAAD7D1A98B2C000DA06B6 /* blueish.jpg in Resources */,
 				ACDAAD7E1A98B2C000DA06B6 /* heartbeat.jpg in Resources */,
 				ACDAAD5A1A98B15900DA06B6 /* LaunchScreen.xib in Resources */,
 				ACDAAD7B1A98B2C000DA06B6 /* blue-o.jpg in Resources */,
-				ACDAAD571A98B15900DA06B6 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +486,7 @@
 				ACDAAD6B1A98B15900DA06B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ACDAAD6C1A98B15900DA06B6 /* Build configuration list for PBXNativeTarget "TimelineTests" */ = {
 			isa = XCConfigurationList;
@@ -486,6 +495,7 @@
 				ACDAAD6E1A98B15900DA06B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
