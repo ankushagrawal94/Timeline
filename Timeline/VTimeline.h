@@ -15,15 +15,15 @@
 @interface VTimeline : NSObject
 
 // Drawing Methods
-+ (void)drawRight_15WithArtistImage: (UIImage*)artistImage imageY: (CGFloat)imageY imageSize: (CGFloat)imageSize timeText: (NSString*)timeText artistName: (NSString*)artistName;
-+ (void)drawLeft_15WithArtistImage: (UIImage*)artistImage imageY: (CGFloat)imageY imageSize: (CGFloat)imageSize timeText: (NSString*)timeText artistName: (NSString*)artistName;
 + (void)drawRight_1WithArtistImage: (UIImage*)artistImage imageY: (CGFloat)imageY imageSize: (CGFloat)imageSize timeText: (NSString*)timeText artistName: (NSString*)artistName;
 + (void)drawLeft_1WithArtistImage: (UIImage*)artistImage imageY: (CGFloat)imageY imageSize: (CGFloat)imageSize timeText: (NSString*)timeText artistName: (NSString*)artistName;
-+ (void)drawLeft_45WithImageY: (CGFloat)imageY imageSize: (CGFloat)imageSize timeText: (NSString*)timeText artistName: (NSString*)artistName;
-+ (void)drawRight_45WithImageY: (CGFloat)imageY imageSize: (CGFloat)imageSize timeText: (NSString*)timeText artistName: (NSString*)artistName;
-+ (void)drawRight_30WithArtistImage: (UIImage*)artistImage imageY: (CGFloat)imageY imageSize: (CGFloat)imageSize timeText: (NSString*)timeText artistName: (NSString*)artistName;
-+ (void)drawLeft_30WithArtistImage: (UIImage*)artistImage imageY: (CGFloat)imageY imageSize: (CGFloat)imageSize timeText: (NSString*)timeText artistName: (NSString*)artistName;
 + (void)drawLeft_10WithArtistImage: (UIImage*)artistImage imageY: (CGFloat)imageY imageSize: (CGFloat)imageSize timeText: (NSString*)timeText artistName: (NSString*)artistName;
 + (void)drawRight_10WithArtistImage: (UIImage*)artistImage imageY: (CGFloat)imageY imageSize: (CGFloat)imageSize timeText: (NSString*)timeText artistName: (NSString*)artistName;
++ (void)drawRight_30WithArtistImage: (UIImage*)artistImage imageY: (CGFloat)imageY imageSize: (CGFloat)imageSize timeText: (NSString*)timeText artistName: (NSString*)artistName;
++ (void)drawLeft_30WithArtistImage: (UIImage*)artistImage imageY: (CGFloat)imageY imageSize: (CGFloat)imageSize timeText: (NSString*)timeText artistName: (NSString*)artistName;
++ (void)drawLeft_45WithArtistImage: (UIImage*)artistImage imageY: (CGFloat)imageY imageSize: (CGFloat)imageSize timeText: (NSString*)timeText artistName: (NSString*)artistName;
++ (void)drawRight_45WithArtistImage: (UIImage*)artistImage imageY: (CGFloat)imageY imageSize: (CGFloat)imageSize timeText: (NSString*)timeText artistName: (NSString*)artistName;
++ (void)drawRight_15WithArtistImage: (UIImage*)artistImage imageY: (CGFloat)imageY imageSize: (CGFloat)imageSize timeText: (NSString*)timeText artistName: (NSString*)artistName;
++ (void)drawLeft_15WithArtistImage: (UIImage*)artistImage imageY: (CGFloat)imageY imageSize: (CGFloat)imageSize timeText: (NSString*)timeText artistName: (NSString*)artistName;
 
 @end

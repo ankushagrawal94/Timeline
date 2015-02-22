@@ -16,13 +16,65 @@
 - (void)drawRect:(CGRect)rect {
     // Drawing code
     
-    if ([self.stageNum isEqualToNumber:@1]){
-        [VTimeline drawLeft_10WithArtistImage:[UIImage imageNamed:@"blueish-o.jpg"] imageY:60 imageSize:116 timeText:@"7:30" artistName:@"Dada Life"];
+    
+    //NSInteger tmp = [self.endTime doubleValue] - [self.startTime doubleValue];
+    //NSNumber * tmp2 = [NSNumber numberWithInteger: tmp];
+    //NSLog(tmp2);
+    
+    
+    if ([self.durationNum isEqualToValue:@10]){
+        if ([self.stageNum isEqualToNumber:@1]){
+            [VTimeline drawLeft_10WithArtistImage:[UIImage imageNamed:@"blueish-o.jpg"] imageY:60 imageSize:116 timeText:@"7:30" artistName:@"Dada Life"];
+        }
+        else{
+            [VTimeline drawRight_10WithArtistImage:[UIImage imageNamed:@"blueish-o.jpg"] imageY:60 imageSize:116 timeText:@"7:30" artistName:@"Dada Life 2"];
+            
+        }
     }
-    else {
-        [VTimeline drawRight_10WithArtistImage:[UIImage imageNamed:@"blueish-o.jpg"] imageY:60 imageSize:116 timeText:@"7:30" artistName:@"Dada Life 2"];
-
+    
+    if ([self.durationNum isEqualToValue:@30]){
+        if ([self.stageNum isEqualToNumber:@1]){
+            [VTimeline drawLeft_30WithArtistImage:[UIImage imageNamed:@"blueish-o.jpg"] imageY:60 imageSize:116 timeText:@"7:30" artistName:@"Dada Life"];
+        }
+        else{
+            [VTimeline drawRight_30WithArtistImage:[UIImage imageNamed:@"blueish-o.jpg"] imageY:60 imageSize:116 timeText:@"7:30" artistName:@"Dada Life 2"];
+            
+        }
     }
+    
+    if ([self.durationNum isEqualToValue:@45]){
+        if ([self.stageNum isEqualToNumber:@1]){
+            [VTimeline drawLeft_45WithArtistImage:[UIImage imageNamed:@"blueish-o.jpg"] imageY:60 imageSize:116 timeText:@"7:30" artistName:@"Dada Life"];
+        }
+        else{
+            [VTimeline drawRight_45WithArtistImage:[UIImage imageNamed:@"blueish-o.jpg"] imageY:60 imageSize:116 timeText:@"7:30" artistName:@"Dada Life 2"];
+            
+        }
+    }
+    
+    if ([self.durationNum isEqualToValue:@60]){
+        if ([self.stageNum isEqualToNumber:@1]){
+            [VTimeline drawLeft_1WithArtistImage:[UIImage imageNamed:@"blueish-o.jpg"] imageY:60 imageSize:116 timeText:@"7:30" artistName:@"Dada Life"];
+        }
+        else{
+            [VTimeline drawRight_1WithArtistImage:[UIImage imageNamed:@"blueish-o.jpg"] imageY:60 imageSize:116 timeText:@"7:30" artistName:@"Dada Life 2"];
+            
+        }
+    }
+    
+    if ([self.durationNum isEqualToValue:@90]){
+        if ([self.stageNum isEqualToNumber:@1]){
+            [VTimeline drawLeft_15WithArtistImage:[UIImage imageNamed:@"blueish-o.jpg"] imageY:60 imageSize:116 timeText:@"7:30" artistName:@"Dada Life"];
+        }
+        else{
+            [VTimeline drawRight_15WithArtistImage:[UIImage imageNamed:@"blueish-o.jpg"] imageY:60 imageSize:116 timeText:@"7:30" artistName:@"Dada Life 2"];
+            
+        }
+    }
+    
+    
+    
+    
 }
 
 @end
