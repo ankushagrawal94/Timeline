@@ -182,7 +182,7 @@
 
     //// Color Declarations
     UIColor* color2 = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 1];
-    UIColor* color3 = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 1];
+    UIColor* color6 = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 0];
 
     //// Variable Declarations
     CGFloat timeHeight = 11;
@@ -197,60 +197,58 @@
 
     //// Rectangle 4 Drawing
     CGContextSaveGState(context);
-    CGContextTranslateCTM(context, (lineX + 54), (lineY - 4));
+    CGContextTranslateCTM(context, (lineX + 68), (lineY - 74));
 
-    UIBezierPath* rectangle4Path = [UIBezierPath bezierPathWithRect: CGRectMake(37, 0, lineWidth, 2)];
+    UIBezierPath* rectangle4Path = [UIBezierPath bezierPathWithRect: CGRectMake(37, 0, (lineWidth - 14), 1)];
     [color2 setFill];
     [rectangle4Path fill];
 
     CGContextRestoreGState(context);
 
 
-    //// Oval Drawing
-    CGContextSaveGState(context);
-    CGContextTranslateCTM(context, (imageX + 30.2254628544), (imageY + 75.311));
-
-    CGRect ovalRect = CGRectMake(-48.53, -57.57, 70, 70);
-    UIBezierPath* ovalPath = [UIBezierPath bezierPathWithOvalInRect: ovalRect];
-    CGContextSaveGState(context);
-    [ovalPath addClip];
-    [artistImage drawInRect: CGRectMake(floor(CGRectGetMinX(ovalRect) + 0.5), floor(CGRectGetMinY(ovalRect) + 0.5), artistImage.size.width, artistImage.size.height)];
-    CGContextRestoreGState(context);
-    [color3 setStroke];
-    ovalPath.lineWidth = 1.5;
-    [ovalPath stroke];
-
-    CGContextRestoreGState(context);
-
-
-    //// Text Drawing
-    CGRect textRect = CGRectMake(46, (textY - 24), 100, 17);
-    NSMutableParagraphStyle* textStyle = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
-    textStyle.alignment = NSTextAlignmentCenter;
-
-    NSDictionary* textFontAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize: UIFont.labelFontSize], NSForegroundColorAttributeName: UIColor.whiteColor, NSParagraphStyleAttributeName: textStyle};
-
-    CGFloat textTextHeight = [artistName boundingRectWithSize: CGSizeMake(textRect.size.width, INFINITY)  options: NSStringDrawingUsesLineFragmentOrigin attributes: textFontAttributes context: nil].size.height;
-    CGContextSaveGState(context);
-    CGContextClipToRect(context, textRect);
-    [artistName drawInRect: CGRectMake(CGRectGetMinX(textRect), CGRectGetMinY(textRect) + (CGRectGetHeight(textRect) - textTextHeight) / 2, CGRectGetWidth(textRect), textTextHeight) withAttributes: textFontAttributes];
-    CGContextRestoreGState(context);
-
-
     //// Rectangle 2 Drawing
-    CGRect rectangle2Rect = CGRectMake((timeX + 162), (timeY - 10), (timeWidth + 14), (timeHeight + 14.5));
+    CGRect rectangle2Rect = CGRectMake((timeX + 162), (timeY - 78), (timeWidth + 14), (timeHeight + 14.5));
     UIBezierPath* rectangle2Path = [UIBezierPath bezierPathWithRoundedRect: rectangle2Rect cornerRadius: 12.75];
-    [UIColor.whiteColor setFill];
+    [color6 setFill];
     [rectangle2Path fill];
     NSMutableParagraphStyle* rectangle2Style = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
     rectangle2Style.alignment = NSTextAlignmentCenter;
 
-    NSDictionary* rectangle2FontAttributes = @{NSFontAttributeName: [UIFont fontWithName: @"Helvetica" size: 12], NSForegroundColorAttributeName: UIColor.blackColor, NSParagraphStyleAttributeName: rectangle2Style};
+    NSDictionary* rectangle2FontAttributes = @{NSFontAttributeName: [UIFont fontWithName: @"Helvetica" size: 12], NSForegroundColorAttributeName: UIColor.whiteColor, NSParagraphStyleAttributeName: rectangle2Style};
 
     CGFloat rectangle2TextHeight = [timeText boundingRectWithSize: CGSizeMake(rectangle2Rect.size.width, INFINITY)  options: NSStringDrawingUsesLineFragmentOrigin attributes: rectangle2FontAttributes context: nil].size.height;
     CGContextSaveGState(context);
     CGContextClipToRect(context, rectangle2Rect);
     [timeText drawInRect: CGRectMake(CGRectGetMinX(rectangle2Rect), CGRectGetMinY(rectangle2Rect) + (CGRectGetHeight(rectangle2Rect) - rectangle2TextHeight) / 2, CGRectGetWidth(rectangle2Rect), rectangle2TextHeight) withAttributes: rectangle2FontAttributes];
+    CGContextRestoreGState(context);
+
+
+    //// Rectangle Drawing
+    CGContextSaveGState(context);
+    CGContextTranslateCTM(context, (lineX + 107), (lineY - 52));
+
+    CGRect rectangleRect = CGRectMake(-131, -22, (lineWidth + 102.5), 30);
+    UIBezierPath* rectanglePath = [UIBezierPath bezierPathWithRect: rectangleRect];
+    CGContextSaveGState(context);
+    [rectanglePath addClip];
+    CGContextScaleCTM(context, 1.0, -1.0);
+    CGContextDrawTiledImage(context, CGRectMake(CGRectGetMinX(rectangleRect), -CGRectGetMinY(rectangleRect), artistImage.size.width, artistImage.size.height), artistImage.CGImage);
+    CGContextRestoreGState(context);
+
+    CGContextRestoreGState(context);
+
+
+    //// Text Drawing
+    CGRect textRect = CGRectMake(9, (textY - 119), 147, 17);
+    NSMutableParagraphStyle* textStyle = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
+    textStyle.alignment = NSTextAlignmentLeft;
+
+    NSDictionary* textFontAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize: UIFont.labelFontSize], NSForegroundColorAttributeName: UIColor.darkGrayColor, NSParagraphStyleAttributeName: textStyle};
+
+    CGFloat textTextHeight = [artistName boundingRectWithSize: CGSizeMake(textRect.size.width, INFINITY)  options: NSStringDrawingUsesLineFragmentOrigin attributes: textFontAttributes context: nil].size.height;
+    CGContextSaveGState(context);
+    CGContextClipToRect(context, textRect);
+    [artistName drawInRect: CGRectMake(CGRectGetMinX(textRect), CGRectGetMinY(textRect) + (CGRectGetHeight(textRect) - textTextHeight) / 2, CGRectGetWidth(textRect), textTextHeight) withAttributes: textFontAttributes];
     CGContextRestoreGState(context);
 }
 
@@ -261,7 +259,7 @@
 
     //// Color Declarations
     UIColor* color2 = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 1];
-    UIColor* color3 = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 1];
+    UIColor* color6 = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 0];
 
     //// Variable Declarations
     CGFloat timeHeight = 11;
@@ -274,57 +272,50 @@
     CGFloat lineY = imageSize / 2.0 + imageY;
     CGFloat textY = imageY + imageSize;
 
-    //// Text 2 Drawing
-    CGRect text2Rect = CGRectMake(75, (textY - 24), 100, 17);
-    NSMutableParagraphStyle* text2Style = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
-    text2Style.alignment = NSTextAlignmentCenter;
-
-    NSDictionary* text2FontAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize: UIFont.labelFontSize], NSForegroundColorAttributeName: UIColor.whiteColor, NSParagraphStyleAttributeName: text2Style};
-
-    CGFloat text2TextHeight = [artistName boundingRectWithSize: CGSizeMake(text2Rect.size.width, INFINITY)  options: NSStringDrawingUsesLineFragmentOrigin attributes: text2FontAttributes context: nil].size.height;
-    CGContextSaveGState(context);
-    CGContextClipToRect(context, text2Rect);
-    [artistName drawInRect: CGRectMake(CGRectGetMinX(text2Rect), CGRectGetMinY(text2Rect) + (CGRectGetHeight(text2Rect) - text2TextHeight) / 2, CGRectGetWidth(text2Rect), text2TextHeight) withAttributes: text2FontAttributes];
-    CGContextRestoreGState(context);
-
-
-    //// Rectangle 3 Drawing
-    UIBezierPath* rectangle3Path = [UIBezierPath bezierPathWithRect: CGRectMake((lineX + 8), (lineY - 4), (lineWidth + 37), 2)];
+    //// Rectangle 4 Drawing
+    UIBezierPath* rectangle4Path = [UIBezierPath bezierPathWithRect: CGRectMake((lineX + 8), (lineY - 74), (lineWidth - 14), 1)];
     [color2 setFill];
-    [rectangle3Path fill];
+    [rectangle4Path fill];
 
 
-    //// Oval Drawing
+    //// Rectangle Drawing
+    CGRect rectangleRect = CGRectMake((timeX - 6), (timeY - 78), (timeWidth + 14), (timeHeight + 14.5));
+    UIBezierPath* rectanglePath = [UIBezierPath bezierPathWithRoundedRect: rectangleRect cornerRadius: 12.75];
+    [color6 setFill];
+    [rectanglePath fill];
+    NSMutableParagraphStyle* rectangleStyle = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
+    rectangleStyle.alignment = NSTextAlignmentCenter;
+
+    NSDictionary* rectangleFontAttributes = @{NSFontAttributeName: [UIFont fontWithName: @"Helvetica" size: 12], NSForegroundColorAttributeName: UIColor.whiteColor, NSParagraphStyleAttributeName: rectangleStyle};
+
+    CGFloat rectangleTextHeight = [timeText boundingRectWithSize: CGSizeMake(rectangleRect.size.width, INFINITY)  options: NSStringDrawingUsesLineFragmentOrigin attributes: rectangleFontAttributes context: nil].size.height;
     CGContextSaveGState(context);
-    CGContextTranslateCTM(context, (imageX + 30.7), (imageY + 77.311));
-
-    CGRect ovalRect = CGRectMake(-19.02, -57.57, 70, 70);
-    UIBezierPath* ovalPath = [UIBezierPath bezierPathWithOvalInRect: ovalRect];
-    CGContextSaveGState(context);
-    [ovalPath addClip];
-    [artistImage drawInRect: CGRectMake(floor(CGRectGetMinX(ovalRect) + 0.5), floor(CGRectGetMinY(ovalRect) + 0.5), artistImage.size.width, artistImage.size.height)];
+    CGContextClipToRect(context, rectangleRect);
+    [timeText drawInRect: CGRectMake(CGRectGetMinX(rectangleRect), CGRectGetMinY(rectangleRect) + (CGRectGetHeight(rectangleRect) - rectangleTextHeight) / 2, CGRectGetWidth(rectangleRect), rectangleTextHeight) withAttributes: rectangleFontAttributes];
     CGContextRestoreGState(context);
-    [color3 setStroke];
-    ovalPath.lineWidth = 1.5;
-    [ovalPath stroke];
 
+
+    //// Rectangle 5 Drawing
+    CGRect rectangle5Rect = CGRectMake((lineX + 22), (lineY - 74), (lineWidth + 102.5), 30);
+    UIBezierPath* rectangle5Path = [UIBezierPath bezierPathWithRect: rectangle5Rect];
+    CGContextSaveGState(context);
+    [rectangle5Path addClip];
+    CGContextScaleCTM(context, 1.0, -1.0);
+    CGContextDrawTiledImage(context, CGRectMake(CGRectGetMinX(rectangle5Rect), -CGRectGetMinY(rectangle5Rect), artistImage.size.width, artistImage.size.height), artistImage.CGImage);
     CGContextRestoreGState(context);
 
 
-    //// Rectangle 2 Drawing
-    CGRect rectangle2Rect = CGRectMake((timeX - 6), (timeY - 10), (timeWidth + 14), (timeHeight + 14.5));
-    UIBezierPath* rectangle2Path = [UIBezierPath bezierPathWithRoundedRect: rectangle2Rect cornerRadius: 12.75];
-    [UIColor.whiteColor setFill];
-    [rectangle2Path fill];
-    NSMutableParagraphStyle* rectangle2Style = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
-    rectangle2Style.alignment = NSTextAlignmentCenter;
+    //// Text Drawing
+    CGRect textRect = CGRectMake(52, (textY - 119), 147, 17);
+    NSMutableParagraphStyle* textStyle = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
+    textStyle.alignment = NSTextAlignmentRight;
 
-    NSDictionary* rectangle2FontAttributes = @{NSFontAttributeName: [UIFont fontWithName: @"Helvetica" size: 12], NSForegroundColorAttributeName: UIColor.blackColor, NSParagraphStyleAttributeName: rectangle2Style};
+    NSDictionary* textFontAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize: UIFont.labelFontSize], NSForegroundColorAttributeName: UIColor.darkGrayColor, NSParagraphStyleAttributeName: textStyle};
 
-    CGFloat rectangle2TextHeight = [timeText boundingRectWithSize: CGSizeMake(rectangle2Rect.size.width, INFINITY)  options: NSStringDrawingUsesLineFragmentOrigin attributes: rectangle2FontAttributes context: nil].size.height;
+    CGFloat textTextHeight = [artistName boundingRectWithSize: CGSizeMake(textRect.size.width, INFINITY)  options: NSStringDrawingUsesLineFragmentOrigin attributes: textFontAttributes context: nil].size.height;
     CGContextSaveGState(context);
-    CGContextClipToRect(context, rectangle2Rect);
-    [timeText drawInRect: CGRectMake(CGRectGetMinX(rectangle2Rect), CGRectGetMinY(rectangle2Rect) + (CGRectGetHeight(rectangle2Rect) - rectangle2TextHeight) / 2, CGRectGetWidth(rectangle2Rect), rectangle2TextHeight) withAttributes: rectangle2FontAttributes];
+    CGContextClipToRect(context, textRect);
+    [artistName drawInRect: CGRectMake(CGRectGetMinX(textRect), CGRectGetMinY(textRect) + (CGRectGetHeight(textRect) - textTextHeight) / 2, CGRectGetWidth(textRect), textTextHeight) withAttributes: textFontAttributes];
     CGContextRestoreGState(context);
 }
 
@@ -335,155 +326,7 @@
 
     //// Color Declarations
     UIColor* color2 = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 1];
-    UIColor* color3 = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 1];
-
-    //// Variable Declarations
-    CGFloat timeHeight = 11;
-    CGFloat timeWidth = 24;
-    CGFloat timeX = 6;
-    CGFloat lineX = timeX + timeWidth;
-    CGFloat imageX = 77;
-    CGFloat lineWidth = imageX - lineX;
-    CGFloat timeY = imageSize / 2.0 - timeHeight / 2.0 + imageY;
-    CGFloat lineY = imageSize / 2.0 + imageY;
-    CGFloat textY = imageY + imageSize;
-
-    //// Text Drawing
-    CGRect textRect = CGRectMake(76, (textY - 13), 110, 16);
-    NSMutableParagraphStyle* textStyle = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
-    textStyle.alignment = NSTextAlignmentCenter;
-
-    NSDictionary* textFontAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize: UIFont.labelFontSize], NSForegroundColorAttributeName: UIColor.whiteColor, NSParagraphStyleAttributeName: textStyle};
-
-    CGFloat textTextHeight = [artistName boundingRectWithSize: CGSizeMake(textRect.size.width, INFINITY)  options: NSStringDrawingUsesLineFragmentOrigin attributes: textFontAttributes context: nil].size.height;
-    CGContextSaveGState(context);
-    CGContextClipToRect(context, textRect);
-    [artistName drawInRect: CGRectMake(CGRectGetMinX(textRect), CGRectGetMinY(textRect) + (CGRectGetHeight(textRect) - textTextHeight) / 2, CGRectGetWidth(textRect), textTextHeight) withAttributes: textFontAttributes];
-    CGContextRestoreGState(context);
-
-
-    //// Rectangle 4 Drawing
-    UIBezierPath* rectangle4Path = [UIBezierPath bezierPathWithRect: CGRectMake((lineX + 8), (lineY - 4), (lineWidth + 37), 2)];
-    [color2 setFill];
-    [rectangle4Path fill];
-
-
-    //// Oval 2 Drawing
-    CGContextSaveGState(context);
-    CGContextTranslateCTM(context, (imageX + 54), (imageY + 57.0886126574));
-
-    CGRect oval2Rect = CGRectMake(-45, -46.09, 90, 90);
-    UIBezierPath* oval2Path = [UIBezierPath bezierPathWithOvalInRect: oval2Rect];
-    CGContextSaveGState(context);
-    [oval2Path addClip];
-    [artistImage drawInRect: CGRectMake(floor(CGRectGetMinX(oval2Rect) + 0.5), floor(CGRectGetMinY(oval2Rect) + 0.5), artistImage.size.width, artistImage.size.height)];
-    CGContextRestoreGState(context);
-    [color3 setStroke];
-    oval2Path.lineWidth = 1.5;
-    [oval2Path stroke];
-
-    CGContextRestoreGState(context);
-
-
-    //// Rectangle 2 Drawing
-    CGRect rectangle2Rect = CGRectMake((timeX - 6), (timeY - 10), (timeWidth + 14), (timeHeight + 14.5));
-    UIBezierPath* rectangle2Path = [UIBezierPath bezierPathWithRoundedRect: rectangle2Rect cornerRadius: 12.75];
-    [UIColor.whiteColor setFill];
-    [rectangle2Path fill];
-    NSMutableParagraphStyle* rectangle2Style = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
-    rectangle2Style.alignment = NSTextAlignmentCenter;
-
-    NSDictionary* rectangle2FontAttributes = @{NSFontAttributeName: [UIFont fontWithName: @"Helvetica" size: 12], NSForegroundColorAttributeName: UIColor.blackColor, NSParagraphStyleAttributeName: rectangle2Style};
-
-    CGFloat rectangle2TextHeight = [timeText boundingRectWithSize: CGSizeMake(rectangle2Rect.size.width, INFINITY)  options: NSStringDrawingUsesLineFragmentOrigin attributes: rectangle2FontAttributes context: nil].size.height;
-    CGContextSaveGState(context);
-    CGContextClipToRect(context, rectangle2Rect);
-    [timeText drawInRect: CGRectMake(CGRectGetMinX(rectangle2Rect), CGRectGetMinY(rectangle2Rect) + (CGRectGetHeight(rectangle2Rect) - rectangle2TextHeight) / 2, CGRectGetWidth(rectangle2Rect), rectangle2TextHeight) withAttributes: rectangle2FontAttributes];
-    CGContextRestoreGState(context);
-}
-
-+ (void)drawLeft_30WithArtistImage: (UIImage*)artistImage imageY: (CGFloat)imageY imageSize: (CGFloat)imageSize timeText: (NSString*)timeText artistName: (NSString*)artistName
-{
-    //// General Declarations
-    CGContextRef context = UIGraphicsGetCurrentContext();
-
-    //// Color Declarations
-    UIColor* color2 = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 1];
-    UIColor* color3 = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 1];
-
-    //// Variable Declarations
-    CGFloat timeHeight = 11;
-    CGFloat timeWidth = 24;
-    CGFloat timeX = 6;
-    CGFloat lineX = timeX + timeWidth;
-    CGFloat imageX = 77;
-    CGFloat lineWidth = imageX - lineX;
-    CGFloat timeY = imageSize / 2.0 - timeHeight / 2.0 + imageY;
-    CGFloat lineY = imageSize / 2.0 + imageY;
-    CGFloat textY = imageY + imageSize;
-
-    //// Text Drawing
-    CGRect textRect = CGRectMake(24, (textY - 13), 110, 16);
-    NSMutableParagraphStyle* textStyle = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
-    textStyle.alignment = NSTextAlignmentCenter;
-
-    NSDictionary* textFontAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize: UIFont.labelFontSize], NSForegroundColorAttributeName: UIColor.whiteColor, NSParagraphStyleAttributeName: textStyle};
-
-    CGFloat textTextHeight = [artistName boundingRectWithSize: CGSizeMake(textRect.size.width, INFINITY)  options: NSStringDrawingUsesLineFragmentOrigin attributes: textFontAttributes context: nil].size.height;
-    CGContextSaveGState(context);
-    CGContextClipToRect(context, textRect);
-    [artistName drawInRect: CGRectMake(CGRectGetMinX(textRect), CGRectGetMinY(textRect) + (CGRectGetHeight(textRect) - textTextHeight) / 2, CGRectGetWidth(textRect), textTextHeight) withAttributes: textFontAttributes];
-    CGContextRestoreGState(context);
-
-
-    //// Rectangle 2 Drawing
-    CGRect rectangle2Rect = CGRectMake((timeX + 162), (timeY - 10), (timeWidth + 14), (timeHeight + 14.5));
-    UIBezierPath* rectangle2Path = [UIBezierPath bezierPathWithRoundedRect: rectangle2Rect cornerRadius: 12.75];
-    [UIColor.whiteColor setFill];
-    [rectangle2Path fill];
-    NSMutableParagraphStyle* rectangle2Style = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
-    rectangle2Style.alignment = NSTextAlignmentCenter;
-
-    NSDictionary* rectangle2FontAttributes = @{NSFontAttributeName: [UIFont fontWithName: @"Helvetica" size: 12], NSForegroundColorAttributeName: UIColor.blackColor, NSParagraphStyleAttributeName: rectangle2Style};
-
-    CGFloat rectangle2TextHeight = [timeText boundingRectWithSize: CGSizeMake(rectangle2Rect.size.width, INFINITY)  options: NSStringDrawingUsesLineFragmentOrigin attributes: rectangle2FontAttributes context: nil].size.height;
-    CGContextSaveGState(context);
-    CGContextClipToRect(context, rectangle2Rect);
-    [timeText drawInRect: CGRectMake(CGRectGetMinX(rectangle2Rect), CGRectGetMinY(rectangle2Rect) + (CGRectGetHeight(rectangle2Rect) - rectangle2TextHeight) / 2, CGRectGetWidth(rectangle2Rect), rectangle2TextHeight) withAttributes: rectangle2FontAttributes];
-    CGContextRestoreGState(context);
-
-
-    //// Rectangle 4 Drawing
-    UIBezierPath* rectangle4Path = [UIBezierPath bezierPathWithRect: CGRectMake((lineX + 54), (lineY - 4), (lineWidth + 37), 2)];
-    [color2 setFill];
-    [rectangle4Path fill];
-
-
-    //// Oval 2 Drawing
-    CGContextSaveGState(context);
-    CGContextTranslateCTM(context, (imageX - 0.383675787601), (imageY + 68));
-
-    CGRect oval2Rect = CGRectMake(-42.62, -58, 90, 90);
-    UIBezierPath* oval2Path = [UIBezierPath bezierPathWithOvalInRect: oval2Rect];
-    CGContextSaveGState(context);
-    [oval2Path addClip];
-    [artistImage drawInRect: CGRectMake(floor(CGRectGetMinX(oval2Rect) + 0.5), floor(CGRectGetMinY(oval2Rect) + 0.5), artistImage.size.width, artistImage.size.height)];
-    CGContextRestoreGState(context);
-    [color3 setStroke];
-    oval2Path.lineWidth = 1.5;
-    [oval2Path stroke];
-
-    CGContextRestoreGState(context);
-}
-
-+ (void)drawLeft_45WithArtistImage: (UIImage*)artistImage imageY: (CGFloat)imageY imageSize: (CGFloat)imageSize timeText: (NSString*)timeText artistName: (NSString*)artistName
-{
-    //// General Declarations
-    CGContextRef context = UIGraphicsGetCurrentContext();
-
-    //// Color Declarations
-    UIColor* color2 = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 1];
-    UIColor* color3 = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 1];
+    UIColor* color6 = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 0];
 
     //// Variable Declarations
     CGFloat timeHeight = 11;
@@ -497,51 +340,178 @@
     CGFloat textY = imageY + imageSize;
 
     //// Rectangle Drawing
-    CGRect rectangleRect = CGRectMake((timeX + 162), (timeY - 10), (timeWidth + 14), (timeHeight + 14.5));
-    UIBezierPath* rectanglePath = [UIBezierPath bezierPathWithRoundedRect: rectangleRect cornerRadius: 12.75];
-    [UIColor.whiteColor setFill];
+    UIBezierPath* rectanglePath = [UIBezierPath bezierPathWithRect: CGRectMake((lineX + 8), (lineY - 74), (lineWidth - 14), 1)];
+    [color2 setFill];
     [rectanglePath fill];
-    NSMutableParagraphStyle* rectangleStyle = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
-    rectangleStyle.alignment = NSTextAlignmentCenter;
 
-    NSDictionary* rectangleFontAttributes = @{NSFontAttributeName: [UIFont fontWithName: @"Helvetica" size: 12], NSForegroundColorAttributeName: UIColor.blackColor, NSParagraphStyleAttributeName: rectangleStyle};
 
-    CGFloat rectangleTextHeight = [timeText boundingRectWithSize: CGSizeMake(rectangleRect.size.width, INFINITY)  options: NSStringDrawingUsesLineFragmentOrigin attributes: rectangleFontAttributes context: nil].size.height;
+    //// Rectangle 3 Drawing
+    CGRect rectangle3Rect = CGRectMake((timeX - 6), (timeY - 78), (timeWidth + 14), (timeHeight + 14.5));
+    UIBezierPath* rectangle3Path = [UIBezierPath bezierPathWithRoundedRect: rectangle3Rect cornerRadius: 12.75];
+    [color6 setFill];
+    [rectangle3Path fill];
+    NSMutableParagraphStyle* rectangle3Style = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
+    rectangle3Style.alignment = NSTextAlignmentCenter;
+
+    NSDictionary* rectangle3FontAttributes = @{NSFontAttributeName: [UIFont fontWithName: @"Helvetica" size: 12], NSForegroundColorAttributeName: UIColor.whiteColor, NSParagraphStyleAttributeName: rectangle3Style};
+
+    CGFloat rectangle3TextHeight = [timeText boundingRectWithSize: CGSizeMake(rectangle3Rect.size.width, INFINITY)  options: NSStringDrawingUsesLineFragmentOrigin attributes: rectangle3FontAttributes context: nil].size.height;
     CGContextSaveGState(context);
-    CGContextClipToRect(context, rectangleRect);
-    [timeText drawInRect: CGRectMake(CGRectGetMinX(rectangleRect), CGRectGetMinY(rectangleRect) + (CGRectGetHeight(rectangleRect) - rectangleTextHeight) / 2, CGRectGetWidth(rectangleRect), rectangleTextHeight) withAttributes: rectangleFontAttributes];
+    CGContextClipToRect(context, rectangle3Rect);
+    [timeText drawInRect: CGRectMake(CGRectGetMinX(rectangle3Rect), CGRectGetMinY(rectangle3Rect) + (CGRectGetHeight(rectangle3Rect) - rectangle3TextHeight) / 2, CGRectGetWidth(rectangle3Rect), rectangle3TextHeight) withAttributes: rectangle3FontAttributes];
     CGContextRestoreGState(context);
+
+
+    //// Rectangle 5 Drawing
+    CGRect rectangle5Rect = CGRectMake((lineX + 22), (lineY - 74), (lineWidth + 102.5), 90);
+    UIBezierPath* rectangle5Path = [UIBezierPath bezierPathWithRect: rectangle5Rect];
+    CGContextSaveGState(context);
+    [rectangle5Path addClip];
+    CGContextScaleCTM(context, 1.0, -1.0);
+    CGContextDrawTiledImage(context, CGRectMake(CGRectGetMinX(rectangle5Rect), -CGRectGetMinY(rectangle5Rect), artistImage.size.width, artistImage.size.height), artistImage.CGImage);
+    CGContextRestoreGState(context);
+
+
+    //// Text 2 Drawing
+    CGRect text2Rect = CGRectMake(51, (textY - 59), 147, 17);
+    NSMutableParagraphStyle* text2Style = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
+    text2Style.alignment = NSTextAlignmentRight;
+
+    NSDictionary* text2FontAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize: UIFont.labelFontSize], NSForegroundColorAttributeName: UIColor.darkGrayColor, NSParagraphStyleAttributeName: text2Style};
+
+    CGFloat text2TextHeight = [artistName boundingRectWithSize: CGSizeMake(text2Rect.size.width, INFINITY)  options: NSStringDrawingUsesLineFragmentOrigin attributes: text2FontAttributes context: nil].size.height;
+    CGContextSaveGState(context);
+    CGContextClipToRect(context, text2Rect);
+    [artistName drawInRect: CGRectMake(CGRectGetMinX(text2Rect), CGRectGetMinY(text2Rect) + (CGRectGetHeight(text2Rect) - text2TextHeight) / 2, CGRectGetWidth(text2Rect), text2TextHeight) withAttributes: text2FontAttributes];
+    CGContextRestoreGState(context);
+}
+
++ (void)drawLeft_30WithArtistImage: (UIImage*)artistImage imageY: (CGFloat)imageY imageSize: (CGFloat)imageSize timeText: (NSString*)timeText artistName: (NSString*)artistName
+{
+    //// General Declarations
+    CGContextRef context = UIGraphicsGetCurrentContext();
+
+    //// Color Declarations
+    UIColor* color2 = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 1];
+    UIColor* color6 = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 0];
+
+    //// Variable Declarations
+    CGFloat timeHeight = 11;
+    CGFloat timeWidth = 24;
+    CGFloat timeX = 6;
+    CGFloat lineX = timeX + timeWidth;
+    CGFloat imageX = 77;
+    CGFloat lineWidth = imageX - lineX;
+    CGFloat timeY = imageSize / 2.0 - timeHeight / 2.0 + imageY;
+    CGFloat lineY = imageSize / 2.0 + imageY;
+    CGFloat textY = imageY + imageSize;
+
+    //// Rectangle 4 Drawing
+    UIBezierPath* rectangle4Path = [UIBezierPath bezierPathWithRect: CGRectMake((lineX + 105), (lineY - 74), (lineWidth - 14), 1)];
+    [color2 setFill];
+    [rectangle4Path fill];
 
 
     //// Rectangle 2 Drawing
-    UIBezierPath* rectangle2Path = [UIBezierPath bezierPathWithRect: CGRectMake((lineX + 54), (lineY - 4), (lineWidth + 37), 2)];
-    [color2 setFill];
+    CGRect rectangle2Rect = CGRectMake((timeX + 162), (timeY - 78), (timeWidth + 14), (timeHeight + 14.5));
+    UIBezierPath* rectangle2Path = [UIBezierPath bezierPathWithRoundedRect: rectangle2Rect cornerRadius: 12.75];
+    [color6 setFill];
     [rectangle2Path fill];
+    NSMutableParagraphStyle* rectangle2Style = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
+    rectangle2Style.alignment = NSTextAlignmentCenter;
 
+    NSDictionary* rectangle2FontAttributes = @{NSFontAttributeName: [UIFont fontWithName: @"Helvetica" size: 12], NSForegroundColorAttributeName: UIColor.whiteColor, NSParagraphStyleAttributeName: rectangle2Style};
 
-    //// Oval Drawing
+    CGFloat rectangle2TextHeight = [timeText boundingRectWithSize: CGSizeMake(rectangle2Rect.size.width, INFINITY)  options: NSStringDrawingUsesLineFragmentOrigin attributes: rectangle2FontAttributes context: nil].size.height;
     CGContextSaveGState(context);
-    CGContextTranslateCTM(context, (imageX - 4), (imageY + 59));
-
-    CGRect ovalRect = CGRectMake(-58, -58, (imageSize - 9), (imageSize - 9));
-    UIBezierPath* ovalPath = [UIBezierPath bezierPathWithOvalInRect: ovalRect];
-    CGContextSaveGState(context);
-    [ovalPath addClip];
-    [artistImage drawInRect: CGRectMake(floor(CGRectGetMinX(ovalRect) + 0.5), floor(CGRectGetMinY(ovalRect) + 0.5), artistImage.size.width, artistImage.size.height)];
+    CGContextClipToRect(context, rectangle2Rect);
+    [timeText drawInRect: CGRectMake(CGRectGetMinX(rectangle2Rect), CGRectGetMinY(rectangle2Rect) + (CGRectGetHeight(rectangle2Rect) - rectangle2TextHeight) / 2, CGRectGetWidth(rectangle2Rect), rectangle2TextHeight) withAttributes: rectangle2FontAttributes];
     CGContextRestoreGState(context);
-    [color3 setStroke];
-    ovalPath.lineWidth = 1.5;
-    [ovalPath stroke];
 
+
+    //// Rectangle Drawing
+    CGRect rectangleRect = CGRectMake((lineX - 24), (lineY - 74), (lineWidth + 102.5), 90);
+    UIBezierPath* rectanglePath = [UIBezierPath bezierPathWithRect: rectangleRect];
+    CGContextSaveGState(context);
+    [rectanglePath addClip];
+    CGContextScaleCTM(context, 1.0, -1.0);
+    CGContextDrawTiledImage(context, CGRectMake(CGRectGetMinX(rectangleRect), -CGRectGetMinY(rectangleRect), artistImage.size.width, artistImage.size.height), artistImage.CGImage);
     CGContextRestoreGState(context);
 
 
     //// Text Drawing
-    CGRect textRect = CGRectMake(16, (textY - 6), 106, 18);
+    CGRect textRect = CGRectMake(9, (textY - 59), 147, 17);
     NSMutableParagraphStyle* textStyle = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
-    textStyle.alignment = NSTextAlignmentCenter;
+    textStyle.alignment = NSTextAlignmentLeft;
 
-    NSDictionary* textFontAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize: UIFont.labelFontSize], NSForegroundColorAttributeName: UIColor.whiteColor, NSParagraphStyleAttributeName: textStyle};
+    NSDictionary* textFontAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize: UIFont.labelFontSize], NSForegroundColorAttributeName: UIColor.darkGrayColor, NSParagraphStyleAttributeName: textStyle};
+
+    CGFloat textTextHeight = [artistName boundingRectWithSize: CGSizeMake(textRect.size.width, INFINITY)  options: NSStringDrawingUsesLineFragmentOrigin attributes: textFontAttributes context: nil].size.height;
+    CGContextSaveGState(context);
+    CGContextClipToRect(context, textRect);
+    [artistName drawInRect: CGRectMake(CGRectGetMinX(textRect), CGRectGetMinY(textRect) + (CGRectGetHeight(textRect) - textTextHeight) / 2, CGRectGetWidth(textRect), textTextHeight) withAttributes: textFontAttributes];
+    CGContextRestoreGState(context);
+}
+
++ (void)drawLeft_45WithArtistImage: (UIImage*)artistImage imageY: (CGFloat)imageY imageSize: (CGFloat)imageSize timeText: (NSString*)timeText artistName: (NSString*)artistName
+{
+    //// General Declarations
+    CGContextRef context = UIGraphicsGetCurrentContext();
+
+    //// Color Declarations
+    UIColor* color2 = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 1];
+    UIColor* color6 = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 0];
+
+    //// Variable Declarations
+    CGFloat timeHeight = 11;
+    CGFloat timeWidth = 24;
+    CGFloat timeX = 6;
+    CGFloat lineX = timeX + timeWidth;
+    CGFloat imageX = 77;
+    CGFloat lineWidth = imageX - lineX;
+    CGFloat timeY = imageSize / 2.0 - timeHeight / 2.0 + imageY;
+    CGFloat lineY = imageSize / 2.0 + imageY;
+    CGFloat textY = imageY + imageSize;
+
+    //// Rectangle 4 Drawing
+    UIBezierPath* rectangle4Path = [UIBezierPath bezierPathWithRect: CGRectMake((lineX + 105), (lineY - 74), (lineWidth - 14), 1)];
+    [color2 setFill];
+    [rectangle4Path fill];
+
+
+    //// Rectangle 2 Drawing
+    CGRect rectangle2Rect = CGRectMake((timeX + 162), (timeY - 78), (timeWidth + 14), (timeHeight + 14.5));
+    UIBezierPath* rectangle2Path = [UIBezierPath bezierPathWithRoundedRect: rectangle2Rect cornerRadius: 12.75];
+    [color6 setFill];
+    [rectangle2Path fill];
+    NSMutableParagraphStyle* rectangle2Style = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
+    rectangle2Style.alignment = NSTextAlignmentCenter;
+
+    NSDictionary* rectangle2FontAttributes = @{NSFontAttributeName: [UIFont fontWithName: @"Helvetica" size: 12], NSForegroundColorAttributeName: UIColor.whiteColor, NSParagraphStyleAttributeName: rectangle2Style};
+
+    CGFloat rectangle2TextHeight = [timeText boundingRectWithSize: CGSizeMake(rectangle2Rect.size.width, INFINITY)  options: NSStringDrawingUsesLineFragmentOrigin attributes: rectangle2FontAttributes context: nil].size.height;
+    CGContextSaveGState(context);
+    CGContextClipToRect(context, rectangle2Rect);
+    [timeText drawInRect: CGRectMake(CGRectGetMinX(rectangle2Rect), CGRectGetMinY(rectangle2Rect) + (CGRectGetHeight(rectangle2Rect) - rectangle2TextHeight) / 2, CGRectGetWidth(rectangle2Rect), rectangle2TextHeight) withAttributes: rectangle2FontAttributes];
+    CGContextRestoreGState(context);
+
+
+    //// Rectangle Drawing
+    CGRect rectangleRect = CGRectMake((lineX - 24), (lineY - 74), (lineWidth + 102.5), 135);
+    UIBezierPath* rectanglePath = [UIBezierPath bezierPathWithRect: rectangleRect];
+    CGContextSaveGState(context);
+    [rectanglePath addClip];
+    CGContextScaleCTM(context, 1.0, -1.0);
+    CGContextDrawTiledImage(context, CGRectMake(CGRectGetMinX(rectangleRect), -CGRectGetMinY(rectangleRect), artistImage.size.width, artistImage.size.height), artistImage.CGImage);
+    CGContextRestoreGState(context);
+
+
+    //// Text Drawing
+    CGRect textRect = CGRectMake(9, (textY - 14), 147, 17);
+    NSMutableParagraphStyle* textStyle = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
+    textStyle.alignment = NSTextAlignmentLeft;
+
+    NSDictionary* textFontAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize: UIFont.labelFontSize], NSForegroundColorAttributeName: UIColor.darkGrayColor, NSParagraphStyleAttributeName: textStyle};
 
     CGFloat textTextHeight = [artistName boundingRectWithSize: CGSizeMake(textRect.size.width, INFINITY)  options: NSStringDrawingUsesLineFragmentOrigin attributes: textFontAttributes context: nil].size.height;
     CGContextSaveGState(context);
@@ -557,7 +527,7 @@
 
     //// Color Declarations
     UIColor* color2 = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 1];
-    UIColor* color3 = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 1];
+    UIColor* color6 = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 0];
 
     //// Variable Declarations
     CGFloat timeHeight = 11;
@@ -571,56 +541,49 @@
     CGFloat textY = imageY + imageSize;
 
     //// Rectangle 4 Drawing
-    UIBezierPath* rectangle4Path = [UIBezierPath bezierPathWithRect: CGRectMake((lineX + 8), (lineY - 4), (lineWidth + 37), 2)];
+    UIBezierPath* rectangle4Path = [UIBezierPath bezierPathWithRect: CGRectMake((lineX + 8), (lineY - 74), (lineWidth - 14), 1)];
     [color2 setFill];
     [rectangle4Path fill];
 
 
-    //// Oval 2 Drawing
+    //// Rectangle 2 Drawing
+    CGRect rectangle2Rect = CGRectMake((timeX - 6), (timeY - 78), (timeWidth + 14), (timeHeight + 14.5));
+    UIBezierPath* rectangle2Path = [UIBezierPath bezierPathWithRoundedRect: rectangle2Rect cornerRadius: 12.75];
+    [color6 setFill];
+    [rectangle2Path fill];
+    NSMutableParagraphStyle* rectangle2Style = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
+    rectangle2Style.alignment = NSTextAlignmentCenter;
+
+    NSDictionary* rectangle2FontAttributes = @{NSFontAttributeName: [UIFont fontWithName: @"Helvetica" size: 12], NSForegroundColorAttributeName: UIColor.whiteColor, NSParagraphStyleAttributeName: rectangle2Style};
+
+    CGFloat rectangle2TextHeight = [timeText boundingRectWithSize: CGSizeMake(rectangle2Rect.size.width, INFINITY)  options: NSStringDrawingUsesLineFragmentOrigin attributes: rectangle2FontAttributes context: nil].size.height;
     CGContextSaveGState(context);
-    CGContextTranslateCTM(context, (imageX + 65), (imageY + 59));
-
-    CGRect oval2Rect = CGRectMake(-58, -58, (imageSize - 9), 107);
-    UIBezierPath* oval2Path = [UIBezierPath bezierPathWithOvalInRect: oval2Rect];
-    CGContextSaveGState(context);
-    [oval2Path addClip];
-    [artistImage drawInRect: CGRectMake(floor(CGRectGetMinX(oval2Rect) + 0.5), floor(CGRectGetMinY(oval2Rect) + 0.5), artistImage.size.width, artistImage.size.height)];
-    CGContextRestoreGState(context);
-    [color3 setStroke];
-    oval2Path.lineWidth = 1.5;
-    [oval2Path stroke];
-
-    CGContextRestoreGState(context);
-
-
-    //// Text 2 Drawing
-    CGRect text2Rect = CGRectMake(78, (textY - 6), 116, 18);
-    NSMutableParagraphStyle* text2Style = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
-    text2Style.alignment = NSTextAlignmentCenter;
-
-    NSDictionary* text2FontAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize: UIFont.labelFontSize], NSForegroundColorAttributeName: UIColor.whiteColor, NSParagraphStyleAttributeName: text2Style};
-
-    CGFloat text2TextHeight = [artistName boundingRectWithSize: CGSizeMake(text2Rect.size.width, INFINITY)  options: NSStringDrawingUsesLineFragmentOrigin attributes: text2FontAttributes context: nil].size.height;
-    CGContextSaveGState(context);
-    CGContextClipToRect(context, text2Rect);
-    [artistName drawInRect: CGRectMake(CGRectGetMinX(text2Rect), CGRectGetMinY(text2Rect) + (CGRectGetHeight(text2Rect) - text2TextHeight) / 2, CGRectGetWidth(text2Rect), text2TextHeight) withAttributes: text2FontAttributes];
+    CGContextClipToRect(context, rectangle2Rect);
+    [timeText drawInRect: CGRectMake(CGRectGetMinX(rectangle2Rect), CGRectGetMinY(rectangle2Rect) + (CGRectGetHeight(rectangle2Rect) - rectangle2TextHeight) / 2, CGRectGetWidth(rectangle2Rect), rectangle2TextHeight) withAttributes: rectangle2FontAttributes];
     CGContextRestoreGState(context);
 
 
     //// Rectangle Drawing
-    CGRect rectangleRect = CGRectMake((timeX - 6), (timeY - 10), (timeWidth + 14), (timeHeight + 14.5));
-    UIBezierPath* rectanglePath = [UIBezierPath bezierPathWithRoundedRect: rectangleRect cornerRadius: 12.75];
-    [UIColor.whiteColor setFill];
-    [rectanglePath fill];
-    NSMutableParagraphStyle* rectangleStyle = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
-    rectangleStyle.alignment = NSTextAlignmentCenter;
-
-    NSDictionary* rectangleFontAttributes = @{NSFontAttributeName: [UIFont fontWithName: @"Helvetica" size: 12], NSForegroundColorAttributeName: UIColor.blackColor, NSParagraphStyleAttributeName: rectangleStyle};
-
-    CGFloat rectangleTextHeight = [timeText boundingRectWithSize: CGSizeMake(rectangleRect.size.width, INFINITY)  options: NSStringDrawingUsesLineFragmentOrigin attributes: rectangleFontAttributes context: nil].size.height;
+    CGRect rectangleRect = CGRectMake((lineX + 22), (lineY - 74), (lineWidth + 102.5), 135);
+    UIBezierPath* rectanglePath = [UIBezierPath bezierPathWithRect: rectangleRect];
     CGContextSaveGState(context);
-    CGContextClipToRect(context, rectangleRect);
-    [timeText drawInRect: CGRectMake(CGRectGetMinX(rectangleRect), CGRectGetMinY(rectangleRect) + (CGRectGetHeight(rectangleRect) - rectangleTextHeight) / 2, CGRectGetWidth(rectangleRect), rectangleTextHeight) withAttributes: rectangleFontAttributes];
+    [rectanglePath addClip];
+    CGContextScaleCTM(context, 1.0, -1.0);
+    CGContextDrawTiledImage(context, CGRectMake(CGRectGetMinX(rectangleRect), -CGRectGetMinY(rectangleRect), artistImage.size.width, artistImage.size.height), artistImage.CGImage);
+    CGContextRestoreGState(context);
+
+
+    //// Text Drawing
+    CGRect textRect = CGRectMake(52, (textY - 14), 147, 17);
+    NSMutableParagraphStyle* textStyle = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
+    textStyle.alignment = NSTextAlignmentRight;
+
+    NSDictionary* textFontAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize: UIFont.labelFontSize], NSForegroundColorAttributeName: UIColor.darkGrayColor, NSParagraphStyleAttributeName: textStyle};
+
+    CGFloat textTextHeight = [artistName boundingRectWithSize: CGSizeMake(textRect.size.width, INFINITY)  options: NSStringDrawingUsesLineFragmentOrigin attributes: textFontAttributes context: nil].size.height;
+    CGContextSaveGState(context);
+    CGContextClipToRect(context, textRect);
+    [artistName drawInRect: CGRectMake(CGRectGetMinX(textRect), CGRectGetMinY(textRect) + (CGRectGetHeight(textRect) - textTextHeight) / 2, CGRectGetWidth(textRect), textTextHeight) withAttributes: textFontAttributes];
     CGContextRestoreGState(context);
 }
 
